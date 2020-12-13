@@ -209,10 +209,74 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {
-  throw new Error('Not implemented');
-}
+function getRectangleString(width, height) {
+  let str = '';
+  function firstStr() {
+    for (let i = 1; i <= width; i += 1) {
+      switch (i) {
+        case 1:
+          str += '┌';
+          break;
+        case width:
+          str += '┐\n';
+          break;
 
+        default:
+          str += '─';
+          break;
+      }
+    }
+  }
+  function middleStr() {
+    for (let i = 1; i <= width; i += 1) {
+      switch (i) {
+        case 1:
+          str += '│';
+          break;
+        case width:
+          str += '│\n';
+          break;
+
+        default:
+          str += ' ';
+          break;
+      }
+    }
+  }
+  function lastStr() {
+    for (let i = 1; i <= width; i += 1) {
+      switch (i) {
+        case 1:
+          str += '└';
+          break;
+        case width:
+          str += '┘\n';
+          break;
+
+        default:
+          str += '─';
+          break;
+      }
+    }
+  }
+
+  for (let i = 1; i <= height; i += 1) {
+    switch (i) {
+      case 1:
+        firstStr();
+
+        break;
+      case height:
+        lastStr();
+        break;
+
+      default:
+        middleStr();
+        break;
+    }
+  }
+  return str;
+}
 /**
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
@@ -246,9 +310,8 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(value) {
-  // throw new Error('Not implemented');
-
+function isString(/* value */) {
+  throw new Error('Not implemented');
 }
 
 /**
