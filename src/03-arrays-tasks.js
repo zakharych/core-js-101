@@ -263,18 +263,10 @@ function getMovingSum(arr) {
  */
 function getSecondItems(arr) {
   // throw new Error('Not implemented');
-  console.log(
-    arr.filter((element) => {
-      Boolean(index % 2);
-    }),
-  );
-  return arr.filter((element) => {
-    if (index % 0) {
-      return element;
-    }
-  });
+  return arr.filter((element, index) => Boolean(index % 2));
 }
-getSecondItems([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+// getSecondItems([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
 /**
  * Propagates every item in sequence its position times
@@ -293,7 +285,6 @@ getSecondItems([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 function propagateItemsByPositionIndex(/* arr */) {
   throw new Error('Not implemented');
 }
-
 /**
  * Returns the 3 largest numbers from the specified array
  *
